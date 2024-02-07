@@ -92,12 +92,10 @@ class _Sign_in_PageState extends State<Sign_in_Page> {
                   child: FilledButton(
                       style: Theme.of(context).filledButtonTheme.style,
                       onPressed: (enablebutton) ? () async{
-                        signIn(email: email_controller.text,
+                        await signIn(email: email_controller.text,
                             password: password_controller.text,
                             onResponse: (AuthResponse response){
-                              if (check == true){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage()));
-                              }},
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage()));},
                             onError: (String e) {showError(context, e);});}: null,
                       child: Text(
                         'Log In',
